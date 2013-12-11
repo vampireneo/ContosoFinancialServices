@@ -298,6 +298,7 @@
         <CommandBar>
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Name="Home" Label="Home" Icon="Home" Click="Home_Click"/>
+                <!--<AppBarButton x:Name="PinToStart" Click="PinToStart_Click" Loaded="PinToStart_Loaded"/>-->
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

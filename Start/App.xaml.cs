@@ -84,6 +84,8 @@ namespace ContosoFinancialServices
             // Ensure the current window is active
             Window.Current.Activate();
 
+            // Call the method to create Live tiles
+            CreateLiveTiles();
         }
 
         /// <summary>
@@ -113,7 +115,46 @@ namespace ContosoFinancialServices
         #endregion
 
         #region Feature - Live Tile
-                
+        /// <summary>
+        /// This method takes a Product as its input and generates an XML Document which contains 
+        /// the actual values to be displayed in the live tile.
+        /// </summary>
+        /// <param name="product">An object of Product class</param>
+        /// <returns>An XML document which is used for generating the live tile content</returns>
+        private XmlDocument CreateWideTile(Product product)
+        {
+            // Create a live update for a wide tile
+            XmlDocument wideTileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileWide310x150SmallImageAndText04);
+
+            // Assign text
+            XmlNodeList wideTileTextAttributes = wideTileXml.GetElementsByTagName("text");
+            wideTileTextAttributes[0].AppendChild(wideTileXml.CreateTextNode(product.ProductCategory));
+            wideTileTextAttributes[1].AppendChild(wideTileXml.CreateTextNode(product.ProductName));
+
+            // Assign Image
+            XmlNodeList wideTileImageAttributes = wideTileXml.GetElementsByTagName("image");
+            ((XmlElement)wideTileImageAttributes[0]).SetAttribute("src", product.ProductImage);
+            ((XmlElement)wideTileImageAttributes[0]).SetAttribute("alt", "Contoso FinServ Product Image");
+
+            return wideTileXml;
+        }
+
+        /// <summary>
+        /// This method creates a new notification for each product by cycling through a list of
+        /// random products and passes the notification to the TileNotificationManager.
+        /// It then enables notification for the application.
+        /// </summary>
+        private async void CreateLiveTiles()
+        {
+            var randomProducts = await ProductDataSource.GetRandomProductsAsync(3);
+            foreach (var product in randomProducts)
+            {
+                // Create a tile notification.  
+                TileNotification tileNotification = new TileNotification(CreateWideTile(product));
+                TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+            }
+            TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);
+        }
         #endregion
     }
 }

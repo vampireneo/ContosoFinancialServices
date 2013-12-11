@@ -127,6 +127,5 @@ namespace ContosoFinancialServices.DataSource
                     item.ProductName.ToUpper().Contains(searchText.ToUpper()) ||
                     item.ProductDescription.ToUpper().Contains(searchText.ToUpper())).ToList();
         }
-
     }
 }
