@@ -74,7 +74,9 @@ namespace ContosoFinancialServices
                                         orderby alphaGroup.Key
                                         select new CustomerGroup { Title = alphaGroup.Key, Items = alphaGroup.ToList() }).ToList();
             groupedItemsViewSource.Source = groupedCustomers;
-            
+
+            // Assign the groups as the data source for Zoomed Out view
+            (SemanticZoom.ZoomedOutView as ListViewBase).ItemsSource = groupedItemsViewSource.View.CollectionGroups;
         }
 
         // <summary>
