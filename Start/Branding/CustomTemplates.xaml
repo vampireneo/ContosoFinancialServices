@@ -80,4 +80,29 @@
         </Grid>
     </DataTemplate>
 
+    <!-- ======================================== -->
+    <!-- Product List Item Template for Wide Tile -->
+    <!-- ======================================== -->
+    <DataTemplate x:Key="WideProductItemTemplate">
+        <Grid Height="120" Width="370" Margin="0,0,0,0" 
+              Background="#44999999"
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Border Grid.RowSpan="1" Width="370" Height="90">
+                <Image Source="{Binding ProductImage}" Stretch="Uniform"/>
+            </Border>
+            <StackPanel Grid.Row="1" Orientation="Vertical" >
+                <StackPanel.Background>
+                    <SolidColorBrush Color="#000000" Opacity="0.7"/>
+                </StackPanel.Background>
+                <TextBlock Text="{Binding ProductName}" Style="{StaticResource SubtitleTextBlockStyle}"  
+                           TextTrimming="WordEllipsis" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
 </ResourceDictionary>

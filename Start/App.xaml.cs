@@ -101,7 +101,15 @@ namespace ContosoFinancialServices
         }
 
         #region Feature - Search
-        
+        protected override void OnSearchActivated(SearchActivatedEventArgs args)
+        {
+            //Get the frame i.e. the content of the current window
+            Frame frame = Window.Current.Content as Frame;
+
+            //Navigate to the Search Results Page
+            frame.Navigate(typeof(SearchResultsPage), args.QueryText);
+        }
+
         #endregion
 
         #region Feature - Live Tile

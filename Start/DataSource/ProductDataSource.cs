@@ -122,11 +122,9 @@ namespace ContosoFinancialServices.DataSource
         public static async Task<List<Product>> SearchProductsAsync(string searchText)
         {
             await _productDataSource.ReadXmlDataFromLocalStorageAsync();
-            return
-                _productDataSource.AllProducts.Where(
+            return _productDataSource.AllProducts.Where(
                     item =>
                     item.ProductName.ToUpper().Contains(searchText.ToUpper()) ||
-                    item.ProductCategory.ToUpper().Contains(searchText.ToUpper()) ||
                     item.ProductDescription.ToUpper().Contains(searchText.ToUpper())).ToList();
         }
 

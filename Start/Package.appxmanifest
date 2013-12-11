@@ -26,6 +26,9 @@
         <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#324A8A" />
         <m2:ApplicationView MinWidth="width320" />
       </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
