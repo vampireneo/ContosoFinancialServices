@@ -72,6 +72,11 @@ namespace ContosoFinancialServices
             this.DefaultViewModel["Products"] = await ProductDataSource.GetProductListByIDAsync(customer.ProductSummary.ToList());
         }
 
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ProductDetailPage), (e.ClickedItem as Product).ProductId);
+        }
+
         #region NavigationHelper registration
 
         /// The methods provided in this section are simply used to allow
@@ -107,12 +112,6 @@ namespace ContosoFinancialServices
             // Navigate to job listing page
             this.Frame.Navigate(typeof(LandingPage));
         }
-
         #endregion
-
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ProductDetailPage), (e.ClickedItem as Product).ProductId);
-        }
     }
 }

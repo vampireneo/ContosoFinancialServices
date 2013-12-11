@@ -178,4 +178,12 @@
     </Grid>
 
 
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="Home" Label="Home" Icon="Home" Click="Home_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
 </Page>
