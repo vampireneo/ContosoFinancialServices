@@ -9,7 +9,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.DataTransfer;
-using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -197,7 +196,133 @@ namespace ContosoFinancialServices
         #endregion
 
         #region Feature - Pin Secondary Tile
-        
+        /// <summary>
+        /// Handles the App Bar event - Pin To Start. This event is used to pin the current product /// as a secondary tile on the Start screen
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.
+        /// </param>
+        private async void PinToStart_Click(object sender, RoutedEventArgs e)
+        {
+            await SecondaryTileCreation(sender);
+        }
+
+        /// <summary>
+        /// This method checks if a secondary tile is already present for this product. If it is
+        /// already present, the product is unpinned, if not the product is pinned.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <returns></returns>
+        private async Task SecondaryTileCreation(object sender)
+        {
+            string appbarTileId = product.ProductId;
+            if (!SecondaryTile.Exists(appbarTileId))
+            {
+                await PinSecondaryTile(sender, appbarTileId);
+            }
+            else
+            {
+                await UnpinSecondaryTile(sender, appbarTileId);
+            }
+        }
+
+        /// <summary>
+        /// This method unpins the existing secondary tile. 
+        /// The user is shown a message informing whether the tile is unpinned successfully
+        /// </summary>
+        private async Task UnpinSecondaryTile(object sender, string appbarTileId)
+        {
+            SecondaryTile secondaryTile = new SecondaryTile(appbarTileId);
+            bool isUnpinned = await secondaryTile.RequestDeleteForSelectionAsync( GetElementRect((FrameworkElement)sender), Placement.Above);
+
+            if (isUnpinned)
+            {
+                MessageDialog dialog = new MessageDialog("Product " + product.ProductName + " successfully unpinned.");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("Product " + product.ProductName + " not unpinned.");
+                await dialog.ShowAsync();
+            }
+
+            ToggleAppBarButton(isUnpinned, sender as AppBarButton);
+        }
+
+
+        /// <summary>
+        /// This method creates the placeholder for the secondary tile and shows it above the 'Pin'
+        /// button.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
+        public static Rect GetElementRect(FrameworkElement element)
+        {
+            GeneralTransform buttonTransform = element.TransformToVisual(null);
+            Point point = buttonTransform.TransformPoint(new Point());
+            return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
+        }
+
+        /// <summary>
+        /// This method assigns the style to the app bar button.
+        /// </summary>
+        /// <param name="showPinButton">if set to <c>true</c> [show pin button].</param>
+        private void ToggleAppBarButton(bool showPinButton, AppBarButton pinToStart)
+        {
+            if (pinToStart != null)
+            {
+                pinToStart.Icon = (showPinButton) ? new SymbolIcon(Symbol.Pin) :
+                    new SymbolIcon(Symbol.UnPin);
+                pinToStart.Label = (showPinButton) ? "Pin To Start" : "Unpin";
+            }
+        }
+
+        /// <summary>
+        /// This method pins the secondary tile. The secondary tile is created using the required /// parameters and pinned. The user is shown a message informing whether the tile is pinned /// successfully
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="appbarTileId">The appbar tile id.</param>
+        /// <returns></returns>
+        private async Task PinSecondaryTile(object sender, string appbarTileId)
+        {
+            // Prepare package images for use as the Tile Logo in our tile to be pinned
+            Uri smallLogo = new Uri("ms-appx:///" + product.ProductImageLarge);
+            //Uri wideLogo = new Uri("ms-appx:///Assets/Tile_310X150.png");
+            Uri wideLogo = new Uri("ms-appx:///" + product.ProductImage);
+
+            string tileActivationArguments = appbarTileId;
+            // Create a 1x1 Secondary tile
+            string subTitle = product.ProductName;
+            SecondaryTile secondaryTile = new SecondaryTile(appbarTileId, product.ProductName, subTitle, tileActivationArguments,
+                TileOptions.ShowNameOnLogo | TileOptions.ShowNameOnWideLogo, smallLogo, wideLogo);
+
+            secondaryTile.ForegroundText = ForegroundText.Light;
+            bool isPinned = await secondaryTile.RequestCreateForSelectionAsync(GetElementRect((FrameworkElement)sender), Windows.UI.Popups.Placement.Above);
+
+            if (isPinned)
+            {
+                MessageDialog dialog = new MessageDialog("Product " + product.ProductName + " successfully pinned.");
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("Product " + product.ProductName + " not pinned.");
+                await dialog.ShowAsync();
+            }
+
+            ToggleAppBarButton(!isPinned, sender as AppBarButton);
+        }
+
+        /// <summary>
+        /// This method is called when the PinToStart button has completed loading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PinToStart_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleAppBarButton(!SecondaryTile.Exists(product.ProductId), sender as AppBarButton);
+        }
+
         #endregion
 
         #region EMI calculation

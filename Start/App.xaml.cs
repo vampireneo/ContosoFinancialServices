@@ -71,16 +71,27 @@ namespace ContosoFinancialServices
                 Window.Current.Content = rootFrame;
             }
 
-            if (rootFrame.Content == null)
+            if (rootFrame.Content == null || !string.IsNullOrEmpty(e.Arguments))
             {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                if (!rootFrame.Navigate(typeof(LandingPage), e.Arguments))
+                // When the navigation stack isn't restored navigate to the first page, 
+                // configuring the new page by passing required information as a navigation 
+                // parameter 
+                if (string.IsNullOrEmpty(e.Arguments))
                 {
-                    throw new Exception("Failed to create initial page");
+                    if (!rootFrame.Navigate(typeof(LandingPage), e.Arguments))
+                    {
+                        throw new Exception("Failed to create initial page");
+                    }
+                }
+                else
+                {
+                    if (!rootFrame.Navigate(typeof(ProductDetailPage), e.Arguments))
+                    {
+                        throw new Exception("Failed to create initial page");
+                    }
                 }
             }
+
             // Ensure the current window is active
             Window.Current.Activate();
 
