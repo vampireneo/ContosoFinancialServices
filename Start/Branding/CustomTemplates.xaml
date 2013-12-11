@@ -1,0 +1,83 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ContosoFinancialServices.Common">
+
+    <local:BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+
+    <!-- ===================== -->
+    <!-- Product Item Template -->
+    <!-- ===================== -->
+    <DataTemplate x:Key="ProductItemTemplate">
+        <Grid Height="250" Width="250" Margin="0,0,0,0"               
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top">
+            <Image Source="{Binding ProductImageLarge}" Stretch="Uniform" />
+            <Grid VerticalAlignment="Bottom" Height="40">
+                <Grid.Background>
+                    <SolidColorBrush Color="#000000" Opacity="0.6"/>
+                </Grid.Background>
+                <TextBlock Text="{Binding ProductName}" Style="{StaticResource SubtitleTextBlockStyle}"  
+                           TextTrimming="WordEllipsis" Foreground="White" Margin="10" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <!-- ====================== -->
+    <!-- Customer Item Template -->
+    <!-- ====================== -->
+    <DataTemplate x:Key="CustomerItemTemplate">
+        <Grid Height="120" Width="370" Margin="0,0,0,0" Background="{StaticResource TileBackgroundBrush}" HorizontalAlignment="Left" 
+              VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Border Grid.RowSpan="2" Width="120" Height="120">
+                <Image Source="{Binding CustomerImage}" Stretch="Uniform"/>
+            </Border>
+            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" Margin="10,10,0,0">
+                <TextBlock Text="{Binding CustomerName}" Style="{StaticResource TitleTextBlockStyle}" />
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource ApplicationForegroundThemeBrush}"  
+                           Margin="0,10,0,0">
+                    <Run Text="Customer ID: "/>
+                    <Run Text="{Binding CustomerId}"/>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1"  Orientation="Horizontal" Margin="0,10,10,10" HorizontalAlignment="Right">
+                <TextBlock Text="{Binding ClientType}" Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <!-- ====================================== -->
+    <!-- Zoomed out Customer List Item Template -->
+    <!-- ====================================== -->
+    <DataTemplate x:Key="CustomerGroupItemTemplate">
+        <Border BorderBrush="#EFEFEF" BorderThickness="1" Background="#44999999">
+            <Grid Height="70" Width="70" Margin="10" 
+			HorizontalAlignment="Center" 
+			VerticalAlignment="Center">
+                <TextBlock  FontSize="27" FontWeight="Normal"  Margin="10,0,10,0" Text="{Binding Group.Title}"  
+                            Style="{StaticResource SubheaderTextBlockStyle}" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <!-- ===================================== -->
+    <!-- Zoomed out Product List Item Template -->
+    <!-- ===================================== -->
+    <DataTemplate x:Key="ProductGroupItemTemplate">
+        <Grid Height="280" Width="240" Background="{StaticResource TileBackgroundBrush}">
+            <TextBlock Text="{Binding Group.Items.Count}" VerticalAlignment="Top" TextAlignment="Right" TextWrapping="NoWrap" Margin="0,0,20,0" 
+                                        FontSize="104" FontWeight="Light" Foreground="{StaticResource ApplicationForegroundThemeBrush}" />
+            <TextBlock Text="{Binding Group.Title}" TextAlignment="Left" VerticalAlignment="Bottom" Margin="15" 
+                       Style="{StaticResource SubheaderTextBlockStyle}" />
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

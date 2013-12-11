@@ -1,0 +1,500 @@
+<ArrayOfProduct xmlns="http://schemas.datacontract.org/2004/07/ContosoFinancialServices.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Product>
+    <CustomizationParameters>
+      <CustomizationParameter>
+        <MaximumValue>65</MaximumValue>
+        <MinimumValue>18</MinimumValue>
+        <ParameterName>Age</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>40</MaximumValue>
+        <MinimumValue>5</MinimumValue>
+        <ParameterName>Policy Term</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Gross Annual Income</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Sum Assured</ParameterName>
+      </CustomizationParameter>
+    </CustomizationParameters>
+    <IsFeatured>true</IsFeatured>
+    <ProductCategory>Insurance Plans</ProductCategory>
+    <ProductCharacteristics>
+      <ProductCharacteristicItem>
+        <Name>Minimum Policy Term</Name>
+        <Value>5 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Maximum Policy Term</Name>
+        <Value>40 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Min/Max Age for Entry</Name>
+        <Value>18-65 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Max Age at Policy Expiry</Name>
+        <Value>75 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Sum Assured</Name>
+        <Value>$10,000</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Premium</Name>
+        <Value>$300</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Premium Payment Mode</Name>
+        <Value>Monthly</Value>
+      </ProductCharacteristicItem>
+    </ProductCharacteristics>
+    <ProductDescription>Provides the flexibility to choose protection cover based on your needs and provides a death benefit equal to Sum Assured. This plan provides an instant life insurance cover at affordable premiums as well as provides tax benefits on the premiums paid. </ProductDescription>
+    <ProductId>00-001</ProductId>
+    <ProductImage>Data/ProductImages/01-Life Term insurance plan.png</ProductImage>
+    <ProductImageLarge>Data/ProductImages/ProductImagesLarge/01-Life Term insurance plan.png</ProductImageLarge>
+    <ProductName>Life Term Insurance Plan</ProductName>   
+    <ProductStatistics>
+      <ProductStatisticsItem>
+        <Name>Claim Settlement Ratio</Name>
+        <Value>91.2 %</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Policies Issued</Name>
+        <Value>1.2 Million</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Assets Under Management</Name>
+        <Value>$7.5 Billion</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Last Year Profitability</Name>
+        <Value>$1.5 Billion</Value>
+      </ProductStatisticsItem>
+      <!--<ClaimSettlementRatio>91.2 %</ClaimSettlementRatio>
+      <PoliciesIssued>1.2 Million</PoliciesIssued>
+      <AssetsUnderManagement>$7.5 Billion</AssetsUnderManagement>
+      <LastYearProfitability>$1.5 Billion</LastYearProfitability>-->
+    </ProductStatistics>
+  </Product>
+  <Product>
+    <CustomizationParameters>
+      <CustomizationParameter>
+        <MaximumValue>65</MaximumValue>
+        <MinimumValue>18</MinimumValue>
+        <ParameterName>Age</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>40</MaximumValue>
+        <MinimumValue>5</MinimumValue>
+        <ParameterName>Policy Term</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Gross Annual Income</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Sum Assured</ParameterName>
+      </CustomizationParameter>
+    </CustomizationParameters>
+    <IsFeatured>true</IsFeatured>
+    <ProductCategory>Insurance Plans</ProductCategory>
+    <ProductCharacteristics>
+      <ProductCharacteristicItem>
+        <Name>Minimum Policy Term</Name>
+        <Value>5 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Maximum Policy Term</Name>
+        <Value>40 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Min/Max Age for Entry</Name>
+        <Value>18-65 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Max Age at Policy Expiry</Name>
+        <Value>75 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Sum Assured</Name>
+        <Value>$10,000</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Premium</Name>
+        <Value>$300</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Premium Payment Mode</Name>
+        <Value>Monthly</Value>
+      </ProductCharacteristicItem>
+    </ProductCharacteristics>
+    <ProductDescription>Provides the flexibility to choose protection cover based on your needs and provides a death benefit equal to Sum Assured. This plan provides an instant life insurance cover at affordable premiums as well as provides tax benefits on the premiums paid. </ProductDescription>
+    <ProductId>00-002</ProductId>
+    <ProductImage>Data/ProductImages/02-Life care insurance plan.png</ProductImage>
+    <ProductImageLarge>Data/ProductImages/ProductImagesLarge/02-Life care insurance plan.png</ProductImageLarge>
+    <ProductName>Life Care Insurance Plan</ProductName>
+    <ProductStatistics>
+      <ProductStatisticsItem>
+        <Name>Claim Settlement Ratio</Name>
+        <Value>95.2 %</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Policies Issued</Name>
+        <Value>2.2 Million</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Assets Under Management</Name>
+        <Value>$9.5 Billion</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Last Year Profitability</Name>
+        <Value>$7.5 Billion</Value>
+      </ProductStatisticsItem>
+      <!--<ClaimSettlementRatio>95.2 %</ClaimSettlementRatio>
+      <PoliciesIssued>2.2 Million</PoliciesIssued>
+      <AssetsUnderManagement>$9.5 Billion</AssetsUnderManagement>
+      <LastYearProfitability>$7.5 Billion</LastYearProfitability>-->
+    </ProductStatistics>
+  </Product>
+  <Product>
+    <CustomizationParameters>
+      <CustomizationParameter>
+        <MaximumValue>65</MaximumValue>
+        <MinimumValue>18</MinimumValue>
+        <ParameterName>Age</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>40</MaximumValue>
+        <MinimumValue>5</MinimumValue>
+        <ParameterName>Policy Term</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Gross Annual Income</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Sum Assured</ParameterName>
+      </CustomizationParameter>
+    </CustomizationParameters>
+    <IsFeatured>true</IsFeatured>
+    <ProductCategory>Insurance Plans</ProductCategory>
+    <ProductCharacteristics>
+      <ProductCharacteristicItem>
+        <Name>Minimum Policy Term</Name>
+        <Value>5 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Maximum Policy Term</Name>
+        <Value>40 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Min/Max Age for Entry</Name>
+        <Value>18-65 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Max Age at Policy Expiry</Name>
+        <Value>75 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Sum Assured</Name>
+        <Value>$10,000</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Premium</Name>
+        <Value>$300</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Premium Payment Mode</Name>
+        <Value>Monthly</Value>
+      </ProductCharacteristicItem>
+    </ProductCharacteristics>
+    <ProductDescription>Provides the flexibility to choose protection cover based on your needs and provides a death benefit equal to Sum Assured. This plan provides an instant life insurance cover at affordable premiums as well as provides tax benefits on the premiums paid. </ProductDescription>
+    <ProductId>00-003</ProductId>
+    <ProductImage>Data/ProductImages/03-Life protect insurance plan.png</ProductImage>
+    <ProductImageLarge>Data/ProductImages/ProductImagesLarge/03-Life protect insurance plan.png</ProductImageLarge>
+    <ProductName>Life Protect Insurance Plan</ProductName>
+    <ProductStatistics>
+      <ProductStatisticsItem>
+        <Name>Claim Settlement Ratio</Name>
+        <Value>89.2 %</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Policies Issued</Name>
+        <Value>2.1 Million</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Assets Under Management</Name>
+        <Value>$9.7 Billion</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Last Year Profitability</Name>
+        <Value>$7.9 Billion</Value>
+      </ProductStatisticsItem>
+      <!--<ClaimSettlementRatio>89.2 %</ClaimSettlementRatio>
+      <PoliciesIssued>2.1 Million</PoliciesIssued>
+      <AssetsUnderManagement>$9.7 Billion</AssetsUnderManagement>
+      <LastYearProfitability>$7.9 Billion</LastYearProfitability>-->
+    </ProductStatistics>
+  </Product>
+  <Product>
+    <CustomizationParameters>
+      <CustomizationParameter>
+        <MaximumValue>65</MaximumValue>
+        <MinimumValue>18</MinimumValue>
+        <ParameterName>Age</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>40</MaximumValue>
+        <MinimumValue>5</MinimumValue>
+        <ParameterName>Policy Term</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Gross Annual Income</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Sum Assured</ParameterName>
+      </CustomizationParameter>
+    </CustomizationParameters>
+    <IsFeatured>true</IsFeatured>
+    <ProductCategory>Investment Plans</ProductCategory>
+    <ProductCharacteristics>
+      <ProductCharacteristicItem>
+        <Name>Minimum Policy Term</Name>
+        <Value>5 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Maximum Policy Term</Name>
+        <Value>40 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Min/Max Age for Entry</Name>
+        <Value>18-65 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Max Age at Policy Expiry</Name>
+        <Value>75 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Sum Assured</Name>
+        <Value>$10,000</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Premium</Name>
+        <Value>$300</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Premium Payment Mode</Name>
+        <Value>Monthly</Value>
+      </ProductCharacteristicItem>
+    </ProductCharacteristics>
+    <ProductDescription>Provides the flexibility to choose protection cover based on your needs and provides a death benefit equal to Sum Assured. This plan provides an instant life insurance cover at affordable premiums as well as provides tax benefits on the premiums paid. </ProductDescription>
+    <ProductId>00-004</ProductId>
+    <ProductImage>Data/ProductImages/04-Regular saving investment plan.png</ProductImage>
+    <ProductImageLarge>Data/ProductImages/ProductImagesLarge/04-Regular saving investment plan.png</ProductImageLarge>
+    <ProductName>Regular Saving Investment Plan</ProductName>
+    <ProductStatistics>
+      <ProductStatisticsItem>
+        <Name>Claim Settlement Ratio</Name>
+        <Value>89.2 %</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Policies Issued</Name>
+        <Value>2.1 Million</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Assets Under Management</Name>
+        <Value>$9.7 Billion</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Last Year Profitability</Name>
+        <Value>$7.9 Billion</Value>
+      </ProductStatisticsItem>
+      <!--<ClaimSettlementRatio>89.2 %</ClaimSettlementRatio>
+      <PoliciesIssued>2.1 Million</PoliciesIssued>
+      <AssetsUnderManagement>$9.7 Billion</AssetsUnderManagement>
+      <LastYearProfitability>$7.9 Billion</LastYearProfitability>-->
+    </ProductStatistics>
+  </Product>
+  <Product>
+    <CustomizationParameters>
+      <CustomizationParameter>
+        <MaximumValue>65</MaximumValue>
+        <MinimumValue>18</MinimumValue>
+        <ParameterName>Age</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>40</MaximumValue>
+        <MinimumValue>5</MinimumValue>
+        <ParameterName>Policy Term</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Gross Annual Income</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Sum Assured</ParameterName>
+      </CustomizationParameter>
+    </CustomizationParameters>
+    <IsFeatured>true</IsFeatured>
+    <ProductCategory>Investment Plans</ProductCategory>
+    <ProductCharacteristics>
+      <ProductCharacteristicItem>
+        <Name>Minimum Policy Term</Name>
+        <Value>5 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Maximum Policy Term</Name>
+        <Value>40 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Min/Max Age for Entry</Name>
+        <Value>18-65 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Max Age at Policy Expiry</Name>
+        <Value>75 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Sum Assured</Name>
+        <Value>$10,000</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Premium</Name>
+        <Value>$300</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Premium Payment Mode</Name>
+        <Value>Monthly</Value>
+      </ProductCharacteristicItem>
+    </ProductCharacteristics>
+    <ProductDescription>Provides the flexibility to choose protection cover based on your needs and provides a death benefit equal to Sum Assured. This plan provides an instant life insurance cover at affordable premiums as well as provides tax benefits on the premiums paid. </ProductDescription>
+    <ProductId>00-005</ProductId>
+    <ProductImage>Data/ProductImages/05-Wealth growth investment plan.png</ProductImage>
+    <ProductImageLarge>Data/ProductImages/ProductImagesLarge/05-Wealth growth investment plan.png</ProductImageLarge>
+    <ProductName>Wealth Growth Investment Plan</ProductName>
+    <ProductStatistics>
+      <ProductStatisticsItem>
+        <Name>Claim Settlement Ratio</Name>
+        <Value>89.2 %</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Policies Issued</Name>
+        <Value>2.1 Million</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Assets Under Management</Name>
+        <Value>$9.7 Billion</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Last Year Profitability</Name>
+        <Value>$7.9 Billion</Value>
+      </ProductStatisticsItem>
+      <!--<ClaimSettlementRatio>89.2 %</ClaimSettlementRatio>
+      <PoliciesIssued>2.1 Million</PoliciesIssued>
+      <AssetsUnderManagement>$9.7 Billion</AssetsUnderManagement>
+      <LastYearProfitability>$7.9 Billion</LastYearProfitability>-->
+    </ProductStatistics>
+  </Product>
+  <Product>
+    <CustomizationParameters>
+      <CustomizationParameter>
+        <MaximumValue>65</MaximumValue>
+        <MinimumValue>18</MinimumValue>
+        <ParameterName>Age</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>40</MaximumValue>
+        <MinimumValue>5</MinimumValue>
+        <ParameterName>Policy Term</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Gross Annual Income</ParameterName>
+      </CustomizationParameter>
+      <CustomizationParameter>
+        <MaximumValue>300</MaximumValue>
+        <MinimumValue>10</MinimumValue>
+        <ParameterName>Sum Assured</ParameterName>
+      </CustomizationParameter>
+    </CustomizationParameters>
+    <IsFeatured>true</IsFeatured>
+    <ProductCategory>Investment Plans</ProductCategory>
+    <ProductCharacteristics>
+      <ProductCharacteristicItem>
+        <Name>Minimum Policy Term</Name>
+        <Value>5 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Maximum Policy Term</Name>
+        <Value>40 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Min/Max Age for Entry</Name>
+        <Value>18-65 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Max Age at Policy Expiry</Name>
+        <Value>75 years</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Sum Assured</Name>
+        <Value>$10,000</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Minimum Premium</Name>
+        <Value>$300</Value>
+      </ProductCharacteristicItem>
+      <ProductCharacteristicItem>
+        <Name>Premium Payment Mode</Name>
+        <Value>Monthly</Value>
+      </ProductCharacteristicItem>
+    </ProductCharacteristics>
+    <ProductDescription>Provides the flexibility to choose protection cover based on your needs and provides a death benefit equal to Sum Assured. This plan provides an instant life insurance cover at affordable premiums as well as provides tax benefits on the premiums paid. </ProductDescription>
+    <ProductId>00-006</ProductId>
+    <ProductImage>Data/ProductImages/06-Happy retirement investment plan.png</ProductImage>
+    <ProductImageLarge>Data/ProductImages/ProductImagesLarge/06-Happy retirement investment plan.png</ProductImageLarge>
+    <ProductName>Happy Retirement Investment Plan</ProductName>
+    <ProductStatistics>
+      <ProductStatisticsItem>
+        <Name>Claim Settlement Ratio</Name>
+        <Value>89.2 %</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Policies Issued</Name>
+        <Value>2.1 Million</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Assets Under Management</Name>
+        <Value>$9.7 Billion</Value>
+      </ProductStatisticsItem>
+      <ProductStatisticsItem>
+        <Name>Last Year Profitability</Name>
+        <Value>$7.9 Billion</Value>
+      </ProductStatisticsItem>
+      <!--<ClaimSettlementRatio>89.2 %</ClaimSettlementRatio>
+      <PoliciesIssued>2.1 Million</PoliciesIssued>
+      <AssetsUnderManagement>$9.7 Billion</AssetsUnderManagement>
+      <LastYearProfitability>$7.9 Billion</LastYearProfitability>-->
+    </ProductStatistics>
+  </Product>
+</ArrayOfProduct>

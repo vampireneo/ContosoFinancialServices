@@ -1,0 +1,233 @@
+<ArrayOfCustomer xmlns="http://schemas.datacontract.org/2004/07/ContosoFinancialServices.DataModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Customer>
+    <AccountNumber>1247532647798</AccountNumber>
+    <AnnualIncome>$560000.00</AnnualIncome>
+    <ClientSince>7/25/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC1234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/02.png</CustomerImage>
+    <CustomerName>Noah Glaze</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-001</a:string>
+      <a:string>00-002</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>1247532647726</AccountNumber>
+    <AnnualIncome>$400000.00</AnnualIncome>
+    <ClientSince>7/24/2013 8:59:15 PM</ClientSince>
+    <ClientType>Gold</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC2234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/04.png</CustomerImage>
+    <CustomerName>Cody Dabney</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-003</a:string>
+      <a:string>00-004</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742311111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/23/2013 8:59:15 PM</ClientSince>
+    <ClientType>Silver</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC3234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/01.png</CustomerImage>
+    <CustomerName>Nina Frazier</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-001</a:string>
+      <a:string>00-003</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742334211</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/22/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC4234534</CustomerId>
+    <CustomerImage>Data/CustomerImages/03.png</CustomerImage>
+    <CustomerName>Holly Tucker</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-001</a:string>
+      <a:string>00-004</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742311111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Gold</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC11234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/06.png</CustomerImage>
+    <CustomerName>Emmanuel Hembree</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-004</a:string>
+      <a:string>00-005</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742388911</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC5234390</CustomerId>
+    <CustomerImage>Data/CustomerImages/05.png</CustomerImage>
+    <CustomerName>Amelia Ramsey</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>123</a:string>
+      <a:string>234</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742311111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Silver</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC6234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/09.png</CustomerImage>
+    <CustomerName>Edgar Tejeda</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-001</a:string>
+      <a:string>00-005</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742311111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC7234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/12.png</CustomerImage>
+    <CustomerName>Tony McCoy</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-005</a:string>
+      <a:string>00-002</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742311111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC8234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/15.png</CustomerImage>
+    <CustomerName>Elijah Forster</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-003</a:string>
+      <a:string>00-001</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56742311111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC9234567</CustomerId>
+    <CustomerImage>Data/CustomerImages/07.png</CustomerImage>
+    <CustomerName>Celia Santos</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-004</a:string>
+      <a:string>00-002</a:string>
+    </ProductSummary>
+  </Customer>
+  <Customer>
+    <AccountNumber>56799489111</AccountNumber>
+    <AnnualIncome>$500000.00</AnnualIncome>
+    <ClientSince>7/21/2013 8:59:15 PM</ClientSince>
+    <ClientType>Platinum</ClientType>
+    <CustomerAddress>
+      12 Sunset Dr.Lexington, KY
+      United States
+    </CustomerAddress>
+    <CustomerEmail>abcd@xyz.com</CustomerEmail>
+    <CustomerId>ABC10239867</CustomerId>
+    <CustomerImage>Data/CustomerImages/10.png</CustomerImage>
+    <CustomerName>Georgia Carr</CustomerName>
+    <CustomerPhone>876-565-4258</CustomerPhone>
+    <MaritalStatus>Single</MaritalStatus>
+    <Occupation>Employee</Occupation>
+    <ProductSummary xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <a:string>00-003</a:string>
+      <a:string>00-002</a:string>
+    </ProductSummary>
+  </Customer>
+</ArrayOfCustomer>
