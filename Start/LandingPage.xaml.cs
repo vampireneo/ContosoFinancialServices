@@ -71,7 +71,7 @@ namespace ContosoFinancialServices
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
 
-            this.defaultViewModel["RecentCustomers"] = await CustomerDataSource.GetRecentCustomerListAsync_Dummy(4);
+            this.defaultViewModel["RecentCustomers"] = await CustomerDataSource.GetRecentCustomerListAsync(4);
 
             this.defaultViewModel["FeaturedProducts"] = await ProductDataSource.GetFeaturedProductListAsync(4);
         }

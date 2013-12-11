@@ -66,7 +66,7 @@ namespace ContosoFinancialServices
         /// session.  The state will be null the first time a page is visited.</param>
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            customer = await CustomerDataSource.GetCustomerDetailsAsync_Dummy(e.NavigationParameter.ToString());
+            customer = await CustomerDataSource.GetCustomerDetailsAsync(e.NavigationParameter.ToString());
             this.DefaultViewModel["Customer"] = customer;
             this.DefaultViewModel["CustomerName"] = customer.CustomerName;
             this.DefaultViewModel["Products"] = await ProductDataSource.GetProductListByIDAsync(customer.ProductSummary.ToList());

@@ -67,13 +67,14 @@ namespace ContosoFinancialServices
         /// session.  The state will be null the first time a page is visited.</param>
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            var customers = await CustomerDataSource.GetCustomerListAsync_Dummy();
+            var customers = await CustomerDataSource.GetCustomerListAsync();
             var groupedCustomers = (from n in customers
                                     group n by n.CustomerName.ToCharArray()[0].ToString()
-                                    into alphaGroup
-                                    orderby alphaGroup.Key
-                                    select new CustomerGroup { Title = alphaGroup.Key, Items = alphaGroup.ToList() }).ToList();
-            groupedItemsViewSource.Source = groupedCustomers;            
+                                        into alphaGroup
+                                        orderby alphaGroup.Key
+                                        select new CustomerGroup { Title = alphaGroup.Key, Items = alphaGroup.ToList() }).ToList();
+            groupedItemsViewSource.Source = groupedCustomers;
+            
         }
 
         // <summary>
