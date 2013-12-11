@@ -1,11 +1,19 @@
-﻿using System;
+﻿using ContosoFinancialServices.Common;
+using ContosoFinancialServices.DataModel;
+using ContosoFinancialServices.DataSource;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using ContosoFinancialServices.Common;
+using System.Text;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
+using Windows.UI.StartScreen;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -13,13 +21,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using ContosoFinancialServices.DataModel;
-using ContosoFinancialServices.DataSource;
-using Windows.ApplicationModel.DataTransfer;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Popups;
-using Windows.UI.StartScreen;
 
 // The Item Detail Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234232
 
@@ -101,13 +102,73 @@ namespace ContosoFinancialServices
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            //Call the corresponding method on Navigation helper 
             navigationHelper.OnNavigatedTo(e);
+
+            //Get an instance of DataTransferManager and add handler for DataRequested event 
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested += DataRequested;            
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            //Call the corresponding method on Navigation helper 
             navigationHelper.OnNavigatedFrom(e);
+
+            //Get an instance of DataTransferManager and remove handler for DataRequested event 
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested -= DataRequested;
+
         }
+
+        private void DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        {
+            DataRequest request = args.Request;
+            if (request != null)
+            {
+                request.Data.Properties.Title = "Found an interesting product...";
+                request.Data.Properties.Description = product.ProductDescription;
+
+                //Create table format using the Product details
+                StringBuilder htmlcontent = new StringBuilder("<p> <Table style=\"font-family:Segoe UI;\"");
+                htmlcontent.Append("<tr> <td> <b> Product Name: </b>" + product.ProductName + "  </td> </tr> ");
+                htmlcontent.Append("<tr> <td> <b> Product Number: </b>" + product.ProductId + " </td> </tr> ");
+                htmlcontent.Append("<tr> <td> <b> Product Category: </b>" + product.ProductCategory + " </td> </tr> ");
+                htmlcontent.Append("<tr> <td> </td> </tr> <tr> <td> <b> Description: </b> </td> </tr> ");
+                htmlcontent.Append("<tr> <td> " + product.ProductDescription + " </td></tr> ");
+
+                if (product.ProductCharacteristics != null)
+                {
+                    htmlcontent.Append("<tr> <td> </td> </tr> <tr> <td> <b> Product Characteristics: </b> </td> </tr> ");
+                    foreach (var spec in product.ProductCharacteristics)
+                    {
+                        htmlcontent.Append("<tr> <td> " + spec.Name + ": " + spec.Value + " </td></tr> ");
+                    }
+                }
+
+                if (product.ProductStatistics != null)
+                {
+                    htmlcontent.Append("<tr> <td> </td> </tr> <tr> <td> <b> Product Statistics: </b> </td> </tr> ");
+                    foreach (var spec in product.ProductStatistics)
+                    {
+                        htmlcontent.Append("<tr> <td> " + spec.Name + ": " + spec.Value + " </td></tr> ");
+                    }
+                }
+
+                if (product.CustomizationParameters != null)
+                {
+                    htmlcontent.Append("<tr> <td> </td> </tr> <tr> <td> <b> Product Customization: </b> </td> </tr> ");
+                    htmlcontent.Append("<tr> <td> Age: " + sliderAge.Value + " years</td></tr> ");
+                    htmlcontent.Append("<tr> <td> Policy Term: " + sliderTerm.Value + " years</td></tr> ");
+                    htmlcontent.Append("<tr> <td> Annual Income: $" + sliderIncome.Value + "K </td></tr> ");
+                    htmlcontent.Append("<tr> <td> Assured Sum: $" + sliderSum.Value + "K </td></tr> ");
+                }
+
+                htmlcontent.Append("</table> </p>");
+                request.Data.SetHtmlFormat(HtmlFormatHelper.CreateHtmlFormat(htmlcontent.ToString()));
+            }
+        }
+
 
         #endregion
 
