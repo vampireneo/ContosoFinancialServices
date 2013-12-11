@@ -104,6 +104,83 @@
             </HubSection>
         </Hub>
 
+        <!-- 
+        ======================================================================
+        DEFINE SECONDARY VIEW:
+            
+        This is the narrow view for the page. This view is used when the page
+        is resized beyond a specific width. This view represents the vertical
+        listing of the customer and product items using ListView.
+        ======================================================================
+        -->
+        <Hub Grid.Row="1" Orientation="Vertical" Visibility="Collapsed" x:Name="SnappedHub">
+
+            <HubSection Padding="20,-30,0,0"  VerticalAlignment="Top" IsHeaderInteractive="true" >
+                <HubSection.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock x:Uid="Section1Header" TextLineBounds="TrimToBaseline" OpticalMarginAlignment="TrimSideBearings" 
+                            Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,15,0">
+                                <Run Text="Recent Customers"/>
+                            </TextBlock>
+                            <TextBlock x:Name="ViewCustomers"  TextLineBounds="TrimToBaseline" OpticalMarginAlignment="TrimSideBearings" 
+                                Style="{StaticResource TitleTextBlockStyle}" Foreground="{StaticResource ApplicationSecondaryForegroundThemeBrush}" Tapped="ViewCustomers_Tapped">
+                                <Run Text="(view all)"/>
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </HubSection.HeaderTemplate>
+                <DataTemplate>
+                    <!--Recent Customers ListView -->
+                    <ListView
+                        x:Name="RecentCustomerItemGridView"
+                        AutomationProperties.AutomationId="RecentCustomerItemGridView"
+                        AutomationProperties.Name="Recent Customers"
+                        ItemsSource="{Binding RecentCustomers}"
+                        SelectionMode="None"
+                        IsSwipeEnabled="false" 
+                        ItemTemplate="{StaticResource CustomerItemTemplate}"
+                        ItemClick="RecentCustomerItemGridView_OnItemClick"
+                        IsItemClickEnabled="True"
+                        Margin="-4,0,0,0">
+                    </ListView>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection Padding="20,-30,0,40"  VerticalAlignment="Top"  IsHeaderInteractive="True">
+                <HubSection.Header>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                        <TextBlock x:Uid="Section1Header" TextLineBounds="TrimToBaseline" OpticalMarginAlignment="TrimSideBearings" Style="{StaticResource SubheaderTextBlockStyle}" Margin="0,0,15,0">
+                            <Run Text="Featured Products"/>
+                        </TextBlock>
+                        <TextBlock x:Name="ViewProducts"  TextLineBounds="TrimToBaseline" OpticalMarginAlignment="TrimSideBearings" Tapped="ViewProducts_Tapped" Style="{StaticResource TitleTextBlockStyle}" Foreground="{StaticResource ApplicationSecondaryForegroundThemeBrush}">
+                            <Run Text="(view all)" />
+                        </TextBlock>
+                    </StackPanel>
+                </HubSection.Header>
+                <DataTemplate>
+                    <!--Featured Products ListView -->
+                    <GridView
+                        x:Name="FeaturedProductItemGridView"
+                        AutomationProperties.AutomationId="FeaturedProductItemGridView"
+                        AutomationProperties.Name="Featured Product Items"
+                        ItemsSource="{Binding FeaturedProducts}"
+                        SelectionMode="None"
+                        IsSwipeEnabled="false" 
+                        ItemTemplate="{StaticResource ProductItemTemplate}"
+                        ItemClick="FeaturedProductItemGridView_OnItemClick"
+                        IsItemClickEnabled="True"
+                        Margin="-4,0,0,0">
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+
         <!-- Page Title and Back Button -->
         <Grid Background="{StaticResource PageHeaderBackgroundBrush}">
             <Grid.ColumnDefinitions>
@@ -124,6 +201,37 @@
             </StackPanel>
 
         </Grid>
-
+        <!-- ===================================== -->
+        <!-- VISUAL STYLES                         -->
+        <!-- This is the narrow view for the page. -->
+        <!-- ===================================== -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="LayoutStates">
+                <VisualState x:Name="PrimaryLayout">
+                    <Storyboard></Storyboard>
+                </VisualState>
+                <VisualState x:Name="NarrowLayout">
+                    <Storyboard>
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitlePanel" Storyboard.TargetProperty="Margin">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="-100,0,20,20"/>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle1" Storyboard.TargetProperty="FontSize">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="40"/>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SnappedHub" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalHub" Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

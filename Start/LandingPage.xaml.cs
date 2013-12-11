@@ -49,11 +49,40 @@ namespace ContosoFinancialServices
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
-            this.navigationHelper.LoadState += navigationHelper_LoadState;            
+            this.navigationHelper.LoadState += navigationHelper_LoadState;
+
+            // Register a handler for the Window.SizeChanged event
+            Window.Current.SizeChanged += Window_SizeChanged;
         }
 
         #region Feature - Windowing Modes
-        
+        /// <summary>
+        /// Check the window width and update the Visual State
+        /// </summary>
+        /// <param name="width">Width of current window</param>
+        void UpdateVisualState(double width)
+        {
+            if (width < 620)
+            {
+                VisualStateManager.GoToState(this, "NarrowLayout", true);
+            }
+            else
+            {
+                VisualStateManager.GoToState(this, "PrimaryLayout", true);
+            }
+        }
+
+        /// <summary>
+        /// Represents the event handler for the Window.SizeChanged event.
+        /// This event is raised whenever the window is resized and helps 
+        /// handle any changes to visual state of the page. 
+        /// </summary>
+        void Window_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        {
+            // Check the window size and update the Visual State
+            UpdateVisualState(e.Size.Width);
+        }
+
         #endregion
 
 
@@ -74,6 +103,9 @@ namespace ContosoFinancialServices
             this.defaultViewModel["RecentCustomers"] = await CustomerDataSource.GetRecentCustomerListAsync(4);
 
             this.defaultViewModel["FeaturedProducts"] = await ProductDataSource.GetFeaturedProductListAsync(4);
+
+            // Check the window size and update the Visual State
+            UpdateVisualState(Window.Current.Bounds.Width);
         }
 
         /// <summary>
